@@ -1,0 +1,18 @@
+{
+  "name": "projeto-auvo",
+  "version": "1.0.0",
+  "description":"Automação Web com Playwright (JavaScript) usando POM - Fluxo Saucedemo",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.1"
+  }
+}
