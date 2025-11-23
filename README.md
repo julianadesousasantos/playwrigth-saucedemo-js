@@ -10,8 +10,6 @@ JavaScript
 
 Page Object Model (POM)
 
-Boas práticas de QA 
-
 O objetivo é demonstrar habilidades práticas em automação web, organização de código, estruturação de testes e criação de cenários end-to-end estáveis.
 
 ⚙️ Tecnologias Utilizadas
