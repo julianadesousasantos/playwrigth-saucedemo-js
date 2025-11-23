@@ -1,13 +1,48 @@
-# Projeto Playwright - Testes E2E (SauceDemo)
+📘 Automação Web com Playwright (JavaScript) | SauceDemo
+🧪 Descrição do Projeto
 
-Este repositório contém testes E2E escritos em JavaScript com `@playwright/test`, organizados usando o padrão Page Object Model (POM). Os testes automatizam um fluxo de compra no site `https://www.saucedemo.com`.
+Este repositório contém uma automação completa do fluxo de compra no site SauceDemo (https://www.saucedemo.com/
+) utilizando:
 
-**Resumo dos cenários cobertos:**
-- **Login:** efetuar login com as credenciais públicas.
-- **Navegação e pesquisa:** navegar até produtos e selecionar um item.
-- **Validação do produto:** verificar título, preço e descrição.
-- **Adicionar ao carrinho e checkout:** adicionar ao carrinho e iniciar checkout.
-- **Finalização de pedido:** preencher dados de envio e finalizar o pedido.
+Playwright Test
+
+JavaScript
+
+Page Object Model (POM)
+
+Boas práticas de QA 
+
+O objetivo é demonstrar habilidades práticas em automação web, organização de código, estruturação de testes e criação de cenários end-to-end estáveis.
+
+⚙️ Tecnologias Utilizadas
+
+Node.js
+
+Playwright
+
+JavaScript (ES6+)
+
+Estrutura POM
+
+Relatórios HTML
+
+Git + GitHub
+
+🚀 Como Executar o Projeto
+🔧 1. Instalar dependências
+npm install
+
+🧩 2. Instalar os browsers do Playwright
+npx playwright install
+
+▶ 3. Executar todos os testes
+npm test
+
+🖥️ 4. Executar vendo o navegador (headed mode)
+npm run test:headed
+
+🐞 5. Modo debug (execução passo a passo)
+npx playwright test --debug
 
 **Requisitos:**
 - **Node.js:** versão compatível com Playwright (recomenda-se Node 18+).
@@ -31,49 +66,70 @@ npx playwright install
 - `test:debug`: `playwright test --debug` — abre UI de debug do Playwright.
 
 
-Ou simplesmente:
+🧱 Cenários Automatizados
+✔ 1. Login
 
-```bash
-npm test
-```
+Login com credenciais válidas (standard_user / secret_sauce)
 
-**Configuração do Playwright**
-- O arquivo `playwright.config.js` está configurado em CommonJS e contém as opções principais do projeto:
-  - `baseURL: 'https://www.saucedemo.com'` — facilita usar rotas relativas.
-  - `headless: true` — execução padrão sem UI.
-  - `screenshot: 'only-on-failure'` — captura tela em falhas.
-  - `trace: 'on-first-retry'` — coleta trace quando re-tentando.
-  - `retries: 0` e projeto apenas para `chromium` (Desktop Chrome).
+✔ 2. Navegação e “Pesquisa”
 
-Se quiser reabilitar múltiplos projetos (Firefox/WebKit), posso ajustar o `playwright.config.js`.
+Listagem dos produtos
 
-**Estrutura do projeto (principais arquivos)**
-- `pages/` — Page Objects:
-  - `login.page.js` — ações e seletores da tela de login.
-  - `products.page.js` — lista e ações na página de produtos.
-  - `product.page.js` — detalhes do produto.
-  - `cart.page.js` — carrinho e ações relacionadas.
-  - `checkout.page.js` — fluxo de checkout.
-- `tests/` — testes:
-  - `e2e.spec.js` — fluxo E2E completo cobrindo os passos principais.
-- `playwright.config.js` — configuração de execução do Playwright.
-- `package.json` — scripts e dependências.
+Busca por produto através da lista (pseudopesquisa)
 
-**Como os testes usam o POM**
-- Os testes instanciam classes de `pages/*` passando a fixture `page` do Playwright. Isso mantém os seletores e ações desacoplados dos casos de teste, facilitando manutenção e reuso.
+✔ 3. Validação do Produto
 
-**Execução local recomendada (passo a passo rápido)**
+Nome
 
-```bash
-cd /c/Users/julia/Documents/playwrigth/projeto-auvo
-npm install
-npx playwright install
-npm test
-```
+Preço
 
-Para depurar interativamente use:
+Descrição
 
-```bash
-npx playwright test --headed
-```
+✔ 4. Carrinho + Checkout
+
+Adicionar item ao carrinho
+
+Acessar carrinho
+
+Preencher dados
+
+Finalizar compra
+
+✔ 5. Confirmação de Pedido
+
+Verificar mensagem de sucesso
+
+🏗 Arquitetura Page Object Model (POM)
+
+Cada página do sistema possui sua própria classe no diretório pages/.
+Isso garante:
+
+Código reutilizável
+
+Maior organização
+
+Testes mais limpos
+
+Facilidade de manutenção
+
+Exemplo de uso:
+const login = new LoginPage(page);
+await login.goto();
+await login.login('standard_user', 'secret_sauce');
+
+
+✨ Diferenciais do Projeto
+
+
+Configuração de slow motion (slowMo)
+
+Teste robusto e completo
+
+Estrutura modular com POM
+
+Relatórios HTML automáticos
+
+Código limpo e legível 
+
+
 
