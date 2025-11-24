@@ -19,14 +19,13 @@ module.exports = defineConfig({
     navigationTimeout: 20000, // Navegação tem até 20s
 
     viewport: { width: 1280, height: 720 },
-    screenshot: 'only-on-failure',
-    trace: 'retain-on-failure'
+    screenshot: 'on',
+    video: 'on',
+    trace: 'on',
   },
 
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] }
-    }
-  ]
+  { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+  { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
+]
 });
