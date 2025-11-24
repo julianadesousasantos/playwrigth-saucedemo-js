@@ -51,7 +51,7 @@ npx playwright test --debug
 1. No diretório do projeto, instale dependências:
 
 ```bash
-cd /c/Users/julia/Documents/playwrigth/projeto-auvo
+cd /c/Users/SEU_USUARIO/Documents/playwrigth/projeto-auvo
 npm install
 npx playwright install
 ```
